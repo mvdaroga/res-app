@@ -1,0 +1,47 @@
+.modal-header {
+  padding: 5px;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4b4b4b;
+}
+
+.modal-body {
+  padding: 5px;
+  max-height: calc(100vh - 150px) !important;
+  overflow: auto;
+}
+
+.modal-footer {
+  padding: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 5px;
+  &:hover {
+    background: #666;
+  }
+  &:active {
+    background: #555;
+  }
+}
+
+.modal.fade {
+  background: rgba(0,0,0,0.2);
+}
+
+.modal-full {
+  max-width: 98vw;
+}

@@ -1,0 +1,96 @@
+
+<div class="col-12 mt-2 width-1220">
+  <div class='row'>
+    <div class='col-4'>
+      <button class='btn btn-primary btn-sm' type='button' (click)='addEdit()'>
+        <fa-icon [icon]='faPlus'></fa-icon> Adaugă
+      </button>
+    </div>
+    <div class='col-4'>
+      <h4 class='text-center'>Persoane</h4>
+    </div>
+    <div class='col-4'></div>
+  </div>
+
+  <div class='row'>
+    <div class='col-12 width-1220'>
+      <table class='table table-striped table-hover'>
+        <thead>
+          <tr class='table-bordered'>
+            <th width='20px' rowspan='2'>Nr. Crt.</th>
+            <th width='40px'>Nume</th>
+            <th width='40px'>Prenume</th>
+            <th width='40px'>CNP</th>
+            <th width='20px'>Varsta</th>
+            <th width='260px'>Lista masini</th>
+            <th rowspan='2' width='80px'></th>
+          </tr>
+          <tr>
+            <th><input class='form-control input-xs' placeholder='Cautare...'></th>
+            <th><input class='form-control input-xs' placeholder='Cautare...'></th>
+            <th><input class='form-control input-xs' placeholder='Cautare...'></th>
+            <th><input class='form-control input-xs' placeholder='Cautare...'></th>
+            <th>
+              <thead>
+                <tr>
+                  <td width='160px'>Nume Marca</td>
+                  <td width='160px'>Nume Model</td>
+                  <td width='80px'>An fabricatie</td>
+                  <td width='80px'>Capacitate cilindica</td>
+                  <td width='80px'>Taxa impozit</td>
+                </tr>
+                <tr>
+                  <td><input class='form-control input-xs' placeholder='Cautare...'></td>
+                  <td><input class='form-control input-xs' placeholder='Cautare...'></td>
+                  <td><input class='form-control input-xs' placeholder='Cautare...'></td>
+                  <td><input class='form-control input-xs' placeholder='Cautare...'></td>
+                  <td><input class='form-control input-xs' placeholder='Cautare...'></td>
+                </tr>
+              </thead>
+             
+            </th>
+          
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class='col-12 position-relative width-1220'>
+      <div id='view' class='view-scroll-people' style='max-height: 60vh;' [scrollWindow]='false' (scroll)='showTopButton()' infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="30" (scrolled)="onScrollDown()">
+        <button type='button' id='back-top' class={{this.showBackTop}} (click)='onScrollTop()'>
+          <fa-icon [icon]='faChevronUp'></fa-icon>
+        </button>
+        <table class='table table-hover table-striped table-bordered font-14 p-0'>
+          <tbody>
+            <tr *ngFor='let r of people.slice(0, limit)' (dblclick)='addEdit(r.id)' class='cursor-pointer'>
+              <td width='20px' class='text-center'>Harcode 1</td>
+              <td width='40px'class='text-center input-xs'>{{r.name}}</td>
+              <td width='40px' class='text-center input-xs'>{{r.surname}}</td>
+              <td width='40px' class='text-center input-xs'>{{r.ssn}}</td>
+              <td width='20px' class='text-center input-xs'>{{r.age}}</td>
+              <td width='100px' class='text-center input-xs'>
+                <table class='table table-hover table-striped table-bordered font-14 p-0'>
+                  <tbody>
+                    <tr *ngFor="let car of r.cars">
+                      <td width='160px'>{{ car.data }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              
+              <td width='40px' (click)='addEdit(r.id)' class='text-center' matTooltip='Modificare' matTooltipPosition='left'>
+                <fa-icon class='text-primary' [icon]='faEdit'></fa-icon>
+              </td>
+              <td width='30px' (click)='delete(r)' class='text-center' matTooltip='Ștergere' matTooltipPosition='left'>
+                <fa-icon class='text-danger' [icon]='faTrashAlt'></fa-icon>
+              </td>
+            </tr>
+            <tr colspan='15' *ngIf='!people.length' class='text-center fw-bold'>
+              <td>Date inexistente!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

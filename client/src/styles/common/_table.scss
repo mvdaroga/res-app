@@ -1,0 +1,165 @@
+.table {
+  margin-bottom: 0;
+  padding: 0px;
+
+  tr {
+    padding: 0;
+  }
+
+  th {
+    border: 1px solid #a9a9a9;
+    text-align: center;
+    vertical-align: middle !important;
+    padding: 0 !important;
+    background-color: #fcf8e3 !important;
+    font-size: 12px;
+  }
+
+  td {
+    border: 1px solid #a9a9a9;
+    vertical-align: middle !important;
+    min-width: 20px;
+    max-height: 44px;
+    font-size: 12px;
+    padding-left: 2px;
+    word-break: break-word;
+  }
+
+}
+
+.last_child {
+  border: 1px solid #a9a9a9 !important;
+  vertical-align: middle !important;
+  min-width: 20px;
+  max-height: 44px;
+  font-size: 12px;
+  padding-left: 2px;
+  word-break: break-word;
+  background-color: #fcf8e3 !important;
+}
+
+.p-0, .p-0 td, .p-0 th {
+  padding: 0 !important;
+}
+
+.p-1, .p-1 td,.p-1 th {
+  padding: 1px !important;
+}
+
+.p-2, .p-2 td,.p-2 th {
+  padding: 2px !important;
+}
+
+.table > tbody + tbody {
+  border: none;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7c7c7c;
+  border-radius: 2px;
+}
+
+#view {
+  overflow-y: scroll;
+}
+
+#back-top {
+  display: inline-block;
+  background-color: #3379b7;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  transition: background-color .5s,
+  opacity .2s, visibility .9s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  padding: 0;
+  border: 0;
+
+  .fa-chevron-up {
+    font-size: 1.6em;
+    line-height: 30px;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #333;
+  }
+
+  &:active {
+    background-color: #555;
+  }
+
+  &.show {
+    opacity: .7;
+    visibility: visible;
+  }
+}
+
+.employee-info {
+  margin-bottom: 0;
+  padding: 0px;
+
+  tr {
+    padding: 0;
+  }
+
+  th {
+    border: 1px solid #a9a9a9 !important;
+    text-align: center;
+    vertical-align: middle !important;
+    padding: 0 !important;
+    background-color: #e7e7e7 !important;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.no-border-all * {
+	border: none !important;
+}
+
+.horizontal {
+  .scroller {
+    overflow-x: auto;
+  }
+
+  th {
+    border-bottom: 0 !important;
+  }
+
+  .hidden-scroll {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    scrollbar-width: none;
+  }
+
+  .me-10 {
+    margin-right: 10px !important;
+  }
+
+  .readonly {
+    background: hsl(0, 11%, 96%);
+  }
+
+  input {
+    height: 33px;
+  }
+}
+
+

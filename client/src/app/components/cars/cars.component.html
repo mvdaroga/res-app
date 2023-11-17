@@ -1,0 +1,71 @@
+
+<div class="col-12 mt-2 width-1220">
+  <div class='row'>
+    <div class='col-4'>
+      <button class='btn btn-primary btn-sm' type='button' (click)='addEdit()'>
+        <fa-icon [icon]='faPlus'></fa-icon> Adaugă
+      </button>
+    </div>
+    <div class='col-4'>
+      <h4 class='text-center'>Masini</h4>
+    </div>
+    <div class='col-4'></div>
+  </div>
+
+  <div class='row'>
+    <div class='col-12 width-1220'>
+      <table class='table table-striped table-hover'>
+        <thead>
+          <tr class='table-bordered'>
+            <th width='60px' rowspan='2'>Nr. Crt.</th>
+            <th width='160px'>Denumire Marca</th>
+            <th width='160px'>Denumire Model</th>
+            <th width='80px'>An fabricatie</th>
+            <th width='80px'>Capacitate cilindrica</th>
+            <th width='80px'>Taxa de impozit</th>
+            <th rowspan='2' width='70px'></th>
+          </tr>
+          <tr>
+            <th><input class='form-control input-xs' placeholder='Căutare...'></th>
+            <th><input class='form-control input-xs' placeholder='Căutare...'></th>
+            <th><input class='form-control input-xs' placeholder='Căutare...'></th>
+            <th><input class='form-control input-xs' placeholder='Căutare...'></th>
+            <th><input class='form-control input-xs' placeholder='Căutare...'></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class='col-12 position-relative width-1220'>
+      <div id='view' class='view-scroll-carInformations' style='max-height: 60vh;' [scrollWindow]='false' (scroll)='showTopButton()' infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="30" (scrolled)="onScrollDown()">
+        <button type='button' id='back-top' class={{this.showBackTop}} (click)='onScrollTop()'>
+          <fa-icon [icon]='faChevronUp'></fa-icon>
+        </button>
+        <table class='table table-hover table-striped table-bordered font-14 p-0'>
+          <tbody>
+            <tr *ngFor='let item of carInformations' (dblclick)='addEdit(item.id)' class='cursor-pointer'>
+              <td width='60px' class='text-center'>{{ item.id }}</td>
+              <td width='160px'>{{ item.brend }}</td>
+              <td width='160px'>{{ item.model }}</td>
+              <td width='80px'>{{ item.year }}</td>
+              <td width='80px'>{{ item.engine }}</td>
+              <td width='80px'>{{ item.tax }}</td>
+
+
+              
+              <td width='30px' (click)='addEdit(item.id)' class='text-center' matTooltip='Modificare' matTooltipPosition='left'>
+                <fa-icon class='text-primary' [icon]='faEdit'></fa-icon>
+              </td>
+              <td width='30px' (click)='delete(item)' class='text-center' matTooltip='Ștergere' matTooltipPosition='left'>
+                <fa-icon class='text-danger' [icon]='faTrashAlt'></fa-icon>
+              </td>
+            </tr>
+            <tr colspan='15' *ngIf='!carInformations.length' class='text-center fw-bold'>
+              <td>Date inexistente!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

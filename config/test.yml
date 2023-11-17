@@ -1,0 +1,4 @@
+default:
+  env       : tets
+  dbUrl     : #{process.env.DATABASE_URL}
+  dbLogging : #{process.env.DB_LOG}

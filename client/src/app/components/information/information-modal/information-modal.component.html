@@ -1,0 +1,28 @@
+<div class='modal-header'>
+  <h4 class='modal-title'>{{id_information ? 'Modificare' : 'Adăugare'}} informație</h4>
+</div>
+
+<div class='modal-body'>
+  <div class='row'>
+    <label class='col-2 control-label'>Denumire*</label>
+    <div class='col-9'>
+      <input [(ngModel)]='modal.name' class='form-control' placeholder='Denumire...' maxlength='200' />
+    </div>
+  </div>
+
+  <div class='row'>
+    <label class='col-2 control-label'>Tip*</label>
+    <div class='col-4'>
+      <input type='number' [(ngModel)]='modal.type' class='form-control' placeholder='Tip...' maxlength='2' />
+    </div>
+    <div class='col-1'>
+      <input type='checkbox' [checked]='modal.liked' class="form-check-input float-end" [(ngModel)]='modal.liked' />
+    </div>
+    <label class='col-5 p-2 text-start'>Apreciat</label>
+  </div>
+</div>
+
+<div class='modal-footer'>
+  <button type='button' class='btn btn-outline-dark' (click)='activeModal.dismiss()'>Renunță</button>
+  <button type='button' class='btn btn-success' (click)='save()'>Salvează</button>
+</div>

@@ -1,0 +1,10 @@
+<div class='modal-header'>
+  <h4 class='modal-title' [innerHtml]='title'></h4>
+</div>
+<div class='modal-body'>
+  <div [innerHTML]='content'></div>
+</div>
+<div class='modal-footer'>
+  <button type='button' class='btn btn-secondary' (click)='activeModal.dismiss()'>{{closeButtonText}}</button>
+  <button type='button' *ngIf='!hideConfirmBtn' class='btn btn-success' (click)='activeModal.close()'>{{confirmButtonText}}</button>
+</div>

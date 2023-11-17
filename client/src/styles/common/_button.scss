@@ -1,0 +1,33 @@
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.tooltip {
+  width: auto !important;
+  z-index: 1250 !important;
+}
+
+.accordion-button {
+  border: 1px solid #adccf8;
+  font-size: 13px;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
